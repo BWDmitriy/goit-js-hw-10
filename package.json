@@ -15,7 +15,9 @@
   "author": "Dmytro Zl",
   "license": "ISC",
   "dependencies": {
+    "flatpickr": "^4.6.13",
     "gh-pages": "^6.1.1",
+    "izitoast": "^1.4.0",
     "simplelightbox": "^2.14.2",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
