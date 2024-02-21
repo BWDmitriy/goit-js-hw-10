@@ -1,4 +1,4 @@
-import 'izitoast';
+// import 'izitoast';
 
 const spanDays = document.querySelector('span[data-days]');
 const spanHours = document.querySelector('span[data-hours');
@@ -22,7 +22,8 @@ const options = {
       startingDate = new Date();
       window.clearInterval(setTimer);
     } else {
-      window.alert('Please choose a date in the future');
+      // window.alert('Please choose a date in the future');
+      iziToast.error({ title: 'Error', message: 'Illegal operation' });
     }
   },
 };
@@ -84,8 +85,3 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-
-iziToast.show({
-  title: 'Hey',
-  message: 'What would you like to add?',
-});
