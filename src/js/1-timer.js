@@ -1,3 +1,5 @@
+import 'izitoast';
+
 const spanDays = document.querySelector('span[data-days]');
 const spanHours = document.querySelector('span[data-hours');
 const spanMinutes = document.querySelector('span[data-minutes]');
@@ -82,4 +84,8 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-  
+
+iziToast.show({
+  title: 'Hey',
+  message: 'What would you like to add?',
+});
