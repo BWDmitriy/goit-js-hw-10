@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                      */import{i as n}from"./assets/vendor-ad859c2f.js";const o=document.querySelector("#submit-button"),a=document.querySelector('input[name="delay"]');o.addEventListener("click",r);function r(t){t.preventDefault();let e=document.querySelector('input[name="state"]:checked');return a.value&&e.value?(console.log("delayInput and stateInput are true!"),alert("ok")):n.warning({title:"Warning",message:"You forgot important data",position:"topRight"})}
+//# sourceMappingURL=commonHelpers2.js.map

@@ -5,27 +5,41 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Homework 9 Form</title>
+  <title>Homework 10 snackbar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   
-  <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-6e7c6433.css">
+  <script type="module" crossorigin src="/goit-js-hw-10/commonHelpers2.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-ad859c2f.js">
+  <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-e5212ee8.css">
+  <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-a41a9843.css">
 </head>
 
 <body>
-  <form class="feedback-form" autocomplete="off">
-    <label for="email"> Email </label>
-    <input placeholder="Type area" type="email" name="email" id="email" autofocus />
+  <form class="form">
+    <label>
+      Delay (ms)
+      <input type="number" name="delay" required />
+    </label>
 
-    <label for="message">Message</label>
+    <fieldset class="fieldset">
+      <legend>State</legend>
+      <label>
+        <input class="input-promise" type="radio" name="state" value="fulfilled" required />
+        Fulfilled
+      </label>
+      <label>
+        <input class="input-promise" type="radio" name="state" value="rejected" required />
+        Rejected
+      </label>
+    </fieldset>
 
-    <textarea name="message" id="message" rows="8"></textarea>
-
-    <button class="form-button" type="submit">Submit</button>
+    <button class="form-button" style="width:360px" type="submit" id="submit-button">Create notification</button>
   </form>
-  <!-- <script src="./js/2-snackbar.js" type="module"></script> -->
+  
 </body>
 
 </html>
