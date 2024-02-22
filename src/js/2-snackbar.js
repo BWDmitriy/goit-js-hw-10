@@ -14,7 +14,7 @@ function createNotification(e) {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
         if (stateInput.value == 'fulfilled') {
-          resolve('Success! Value passed to resolve function!');
+          resolve(`Fulfilled promise in ${delayInput.value}ms`);
           console.log(promise);
           iziToast.success({
             title: 'Success!',
@@ -23,7 +23,7 @@ function createNotification(e) {
           });
         }
         if (stateInput.value == 'rejected') {
-          reject('Error! Error passed to reject function!');
+          reject(`Rejected promise in ${delayInput.value}ms`);
           console.log(promise);
           iziToast.error({
             title: 'Error',
