@@ -27,7 +27,7 @@ function createNotification(e) {
           console.log(promise);
           iziToast.error({
             title: 'Error',
-            message: 'Error passed to reject function!',
+            message: `Rejected promise in ${delayInput.value}ms`,
             position: 'topRight',
           });
         }
