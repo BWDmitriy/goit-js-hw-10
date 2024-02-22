@@ -25,7 +25,11 @@ const options = {
       window.clearInterval(setTimer);
     } else {
       // window.alert('Please choose a date in the future');
-      iziToast.error({ title: 'Error', message: 'Illegal operation' });
+      iziToast.error({
+        title: 'Error',
+        message: 'Please choose a date in the future',
+        position: 'topRight',
+      });
     }
   },
 };

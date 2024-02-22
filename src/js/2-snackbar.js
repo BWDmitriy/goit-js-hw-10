@@ -1,41 +1,22 @@
-const form = document.querySelector('.feedback-form');
-const localStorageKey = 'feedback-form-state';
-const email = form.elements.email;
-const message = form.elements.message;
+import iziToast from 'izitoast';
+// Додатковий імпорт стилів
+import 'izitoast/dist/css/iziToast.min.css';
 
-const storedFormData = JSON.parse(localStorage.getItem(localStorageKey)) || {
-  email: '',
-  message: '',
-};
+const createButton = document.querySelector('#submit-button');
+const delayInput = document.querySelector('input[name="delay"]');
 
-email.value = storedFormData.email;
-message.value = storedFormData.message;
+createButton.addEventListener('click', createNotification);
 
-form.addEventListener('input', event => {
-  const formData = {
-    email: email.value.trim(),
-    message: message.value.trim(),
-  };
-
-  saveFormData(formData);
-});
-
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
-  if (email.value == '' || message.value == '') {
-    return alert('All form fields must be filled in');
+function createNotification(e) {
+  e.preventDefault();
+  let stateInput = document.querySelector('input[name="state"]:checked');
+  if (delayInput.value && stateInput.value) {
+    console.log('delayInput and stateInput are true!');
+    return alert('ok');
   }
-  const formData = {
-    email: email.value.trim(),
-    message: message.value.trim(),
-  };
-
-  saveFormData(formData);
-  console.log(formData);
-  form.reset();
-  localStorage.removeItem(localStorageKey);
-});
-
-function saveFormData(formData) {
-  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+  return iziToast.warning({
+    title: 'Warning',
+    message: 'You forgot important data',
+    position: 'topRight',
+  });
 }

@@ -16,27 +16,8 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.gallery {
-  display: flex;
-  gap: 24px;
-  width: 1128px;
-  flex-wrap: wrap;
-  margin: auto;
-}
-
-.gallery-item {
-  display: block;
-  width: calc((100% - 48px) / 3);
-}
-.feedback-form {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 8px;
-}
 .form-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
@@ -53,7 +34,10 @@
 .form-button:hover {
   background: #6c8cff;
 }
-
+.form-button[disabled] {
+  background: #cfcfcf;
+  color: #989898;
+}
 label {
   font: 400 16px / 1.5 'Montserrat', sans-serif;
   letter-spacing: 0.04em;
@@ -68,7 +52,11 @@ textarea {
   height: 80px;
   box-sizing: border-box;
 }
-
+legend {
+  font: 400 16px / 1.5 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
 input {
   width: 360px;
   height: 40px;
@@ -78,6 +66,10 @@ input {
   padding: 8px;
   padding-left: 16px;
   box-sizing: border-box;
+}
+.input-promise {
+  width: auto;
+  height: auto;
 }
 .timer {
   display: flex;
@@ -99,4 +91,19 @@ input {
 .label {
   font: 400 16px / 1.5 'Montserrat', sans-serif;
   color: #2e2f42;
+}
+.form {
+  width: 360px;
+}
+.fieldset {
+  height: 78px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: 'Always Show Up/Down Arrows';
 }
