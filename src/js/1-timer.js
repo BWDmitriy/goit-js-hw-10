@@ -1,4 +1,6 @@
-// import 'izitoast';
+import iziToast from 'izitoast';
+// Додатковий імпорт стилів
+import 'izitoast/dist/css/iziToast.min.css';
 
 const spanDays = document.querySelector('span[data-days]');
 const spanHours = document.querySelector('span[data-hours');
