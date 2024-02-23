@@ -3,7 +3,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const spanDays = document.querySelector('span[data-days]');
-const spanHours = document.querySelector('span[data-hours');
+const spanHours = document.querySelector('span[data-hours]');
 const spanMinutes = document.querySelector('span[data-minutes]');
 const spanSeconds = document.querySelector('span[data-seconds]');
 
@@ -53,18 +53,19 @@ function setTimer() {
     const timeObj = convertMs(
       userSelectedDate.getTime() - startingDate.getTime()
     );
-    spanDays.innerHTML = addLeadingZero(timeObj.days);
-    spanHours.innerHTML = addLeadingZero(timeObj.hours);
-    spanMinutes.innerHTML = addLeadingZero(timeObj.minutes);
-    spanSeconds.innerHTML = addLeadingZero(timeObj.seconds);
+    spanDays.textContent = addLeadingZero(timeObj.days);
+    spanHours.textContent = addLeadingZero(timeObj.hours);
+    spanMinutes.textContent = addLeadingZero(timeObj.minutes);
+    spanSeconds.textContent = addLeadingZero(timeObj.seconds);
   } else {
     window.clearInterval(timerInterval);
-    spanDays.innerHTML = '00';
-    spanHours.innerHTML = '00';
-    spanMinutes.innerHTML = '00';
-    spanSeconds.innerHTML = '00';
+    spanDays.textContent = '00';
+    spanHours.textContent = '00';
+    spanMinutes.textContent = '00';
+    spanSeconds.textContent = '00';
   }
 }
+
 function addLeadingZero(value) {
   if (value < 10) {
     let str = value.toString();
@@ -73,6 +74,7 @@ function addLeadingZero(value) {
     return value;
   }
 }
+
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
@@ -89,5 +91,10 @@ function convertMs(ms) {
   // Remaining seconds
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
-  return { days, hours, minutes, seconds };
+  return {
+    days,
+    hours,
+    minutes,
+    seconds
+  };
 }
