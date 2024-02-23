@@ -42,7 +42,7 @@ startButton.addEventListener('click', setTimer);
 startButton.addEventListener('click', () => {
   startButton.setAttribute('disabled', '');
   document
-    .getElementsByClassName('flatpickr-input flatpickr-mobile')[0]
+    .getElementsByClassName('flatpickr-input')[0]
     .setAttribute('disabled', '');
   timerInterval = setInterval(setTimer, 1000);
 });
