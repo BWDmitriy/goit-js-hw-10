@@ -58,7 +58,7 @@ function setTimer() {
     spanMinutes.textContent = addLeadingZero(timeObj.minutes);
     spanSeconds.textContent = addLeadingZero(timeObj.seconds);
   } else {
-    window.clearInterval(timerInterval);
+    clearInterval(timerInterval);
     spanDays.textContent = '00';
     spanHours.textContent = '00';
     spanMinutes.textContent = '00';
