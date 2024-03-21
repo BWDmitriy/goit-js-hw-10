@@ -24,7 +24,7 @@ const options = {
       startingDate = new Date();
       window.clearInterval(setTimer);
     } else {
-      // window.alert('Please choose a date in the future');
+      document.querySelector('button[data-start]').setAttribute('disabled', '');
       iziToast.error({
         title: 'Error',
         message: 'Please choose a date in the future',
